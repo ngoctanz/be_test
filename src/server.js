@@ -16,7 +16,7 @@ const host = process.env.APP_HOST;
 
 const START_SERVER = () => {
   const corsOptions = {
-    origin: true, // Cho phép tất cả origins
+    origin: true,
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
