@@ -12,6 +12,9 @@ import { CONNECT_DB } from "./config/mongodb.js";
 
 const app = express();
 
+// Trust proxy - required for Render, Heroku, etc.
+app.set('trust proxy', 1);
+
 const PORT = process.env.PORT || 8081;
 const HOST = "0.0.0.0";
 
