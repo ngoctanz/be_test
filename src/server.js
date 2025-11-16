@@ -19,9 +19,10 @@ const PORT = process.env.PORT || 8081;
 const HOST = "0.0.0.0";
 
 const START_SERVER = () => {
-  const allowedOrigins = process.env.ALLOWED_ORIGINS 
-    ? process.env.ALLOWED_ORIGINS.split(',') 
-    : ['https://fetestdeploy.vercel.app'];
+  const allowedOrigins = [
+    'http://localhost:3000',
+    'https://fetestdeploy.vercel.app'
+  ];
   
   const corsOptions = {
     origin: function (origin, callback) {
