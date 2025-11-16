@@ -11,8 +11,9 @@ import {
 import { CONNECT_DB } from "./config/mongodb.js";
 
 const app = express();
-const port = process.env.APP_PORT;
-const host = process.env.APP_HOST;
+
+const PORT = process.env.PORT || 8081;
+const HOST = "0.0.0.0";
 
 const START_SERVER = () => {
   const corsOptions = {
@@ -31,10 +32,11 @@ const START_SERVER = () => {
   app.use(notFoundHandler);
   app.use(errorHandlingMiddleware);
 
-  app.listen(port, host, () => {
-    console.log(`Example app listening on http://${host}:${port}`);
+  app.listen(PORT, HOST, () => {
+    console.log(`Server running on http://${HOST}:${PORT}`);
   });
 };
+
 CONNECT_DB()
   .then(() => console.log("Database connected!"))
   .then(() => START_SERVER())
